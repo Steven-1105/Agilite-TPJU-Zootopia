@@ -5,7 +5,7 @@
 
 ---
 
-## 1. Le Contexte : Une Ville à (Re)Construire
+## 1. Le Contexte : Une Ville à Construire
 Notre mission consistait à fusionner deux univers distincts : le monde hiérarchique de la **Géographie** (Continents, Pays) et l'écosystème dynamique de la **Biologie** (Habitats, Animaux). Nous avons choisi l'univers de **Zootopia** comme cadre parfait, car il illustre une société complexe où chaque espèce doit trouver sa place dans un environnement adapté, sous une administration unifiée.
 
 **Objectif :** Créer une méta-structure cohérente permettant aux citoyens-animaux d'évoluer dans des districts géographiques tout en respectant leurs besoins biologiques, avec une contrainte majeure : **modifier le code existant de manière minimale.**
