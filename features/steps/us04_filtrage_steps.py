@@ -6,6 +6,7 @@ from src.pays import Pays
 world_map = {}
 
 @given('le continent "{nom_cont}" existe avec les pays suivants:')
+@given('le continent "{nom_cont}" existe avec les pays suivants:')
 def step_create_continent_with_table(context, nom_cont):
     # On force un continent "propre" pour ce scénario
     c = Continent(nom_cont, reset=True)
