@@ -19,3 +19,7 @@ class Continent:
 
     def set_nom(self, nom):
         self._nom = nom
+
+    def add_country(self, pays):
+        if pays not in self._pays:
+            self._pays.append(pays)
