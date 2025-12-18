@@ -11,10 +11,10 @@ class Pays:
     """
     def __init__(self, nom="France", nb_habitant=66142961):
         # [cite_start]Initialisation des attributs nom et habitants [cite: 13]
-        self._nom = nom
-        self._nb_habitant = nb_habitant
+        self._nom : str = nom
+        self._nb_habitant : int = nb_habitant
         # [cite_start]Création automatique d'une instance de Capitale au démarrage [cite: 13]
-        self._continent = Continent()
+        self._continent : Continent = Continent()
 
     # [cite_start]Getters et Setters [cite: 14]
     def get_nom(self):
@@ -42,9 +42,3 @@ class Pays:
         """
         if nb > 0:
             self.set_nb_habitant(self.get_nb_habitant() + nb)
-
-    def bonne_capitale(self, nom_c):
-        """
-        Vérifie si le nom proposé correspond à la capitale du pays.
-        """
-        return nom_c == self._capitale.get_nom()
