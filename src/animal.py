@@ -31,6 +31,10 @@ class Animal:
     def get_habitat(self) -> Optional[Habitat]:
         return self.habitat
 
+    def set_age(self, age) -> None :
+        self.age = age
+
+
     def set_habitat(self, habitat: Optional[Habitat]) -> None:
         """
         Setter public de l'habitat.
@@ -146,3 +150,4 @@ class Animal:
         Indique si l'animal peut survivre dans son habitat actuel.
         """
         return self.energy >= self.daily_energy_need()
+

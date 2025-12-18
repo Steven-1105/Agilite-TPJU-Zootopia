@@ -14,6 +14,10 @@ def step_create_habitat(context, habitat_type):
 def step_animal_lives_in(context, habitat_type):
     context.animal.set_habitat(Habitat(habitat_type))
 
+@when(u'l\'animal vieillit')
+def step_grow(context):
+    context.animal.grow_old()
+
 @when('l\'animal se déplace vers son habitat')
 def step_move_to(context):
     context.animal.move_to(context.habitat)
@@ -21,6 +25,10 @@ def step_move_to(context):
 @when('l\'animal calcule ses besoins journaliers')
 def step_calc_needs(context):
     context.daily_needs = context.animal.calculate_daily_needs()
+
+@then('l\'âge de l\'animal est {age:d}')
+def step_set_age_animal(context, age):
+    context.animal.set_age(age)
 
 @then('l\'animal vit dans "{habitat_type}"')
 def step_check_habitat(context, habitat_type):
@@ -34,3 +42,7 @@ def step_check_energy(context, expected):
 @then('le besoin journalier est {expected:d}')
 def step_check_daily_needs(context, expected):
     assert context.daily_needs == expected
+
+@then(u'l\'animal ne peut pas survivre')
+def step_check_death(context):
+    assert context.daily_needs > context.animal.get_energy()
