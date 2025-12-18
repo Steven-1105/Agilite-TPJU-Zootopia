@@ -5,9 +5,14 @@ from src.pays import Pays
 # Dictionnaire pour stocker nos continents (comme pour l'US-03)
 world_map = {}
 
-@given('le continent "{nom_cont}" existe avec les pays suivants')
+@given('le continent "{nom_cont}" existe avec les pays suivants:')
 def step_create_continent_with_table(context, nom_cont):
     c = Continent(nom_cont)
+
+    # On vide la liste des pays pour effacer les traces du test précédent (US-03)
+    c._pays = []
+    # -------------------------------
+
     # On lit le tableau ligne par ligne
     for row in context.table:
         nom_pays = row['nom']
