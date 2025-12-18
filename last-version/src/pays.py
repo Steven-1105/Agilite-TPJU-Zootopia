@@ -27,7 +27,8 @@ class Pays:
         return self._nb_habitant
 
     def set_nb_habitant(self, hab):
-        self._nb_habitant = hab
+        if(hab > 0):
+            self._nb_habitant = hab
 
     def set_capitale(self, c):
         self._capitale = c
