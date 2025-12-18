@@ -28,7 +28,7 @@ Ces deux mondes devaient communiquer sans que l'un ne modifie profondément le c
 ### **Niveau 1 : Le Cœur Unique - Le Singleton `Continent`**
 Pour garantir l'unicité et la cohérence de la métropole, nous avons instauré **Zootopia comme un Singleton**. Peu importe qui ou quoi l'interroge, il n'existe qu'une seule et unique instance de la ville. C'est la pierre angulaire administrative, le "Continent" qui chapeaute tout.
 
-* Zootopia est une. Son administration centrale est unique et incontestable, garantissant l'ordre à l'échelle de la métropole. *
+* Zootopia est une. Son administration centrale est unique et incontestable, garantissant l'ordre à l'échelle de la métropole. 
 
 ### **Niveau 2 : Les Districts - La classe `Pays`**
 La ville se divise en **districts climatiques emblématiques** (Tundratown, Sahara Square, Rainforest District...). Chacun est une instance de `Pays`. Dès sa création, un district s'enregistre **automatiquement** auprès de la mairie centrale (`Continent`), s'inscrivant dans la cartographie officielle de Zootopia.
