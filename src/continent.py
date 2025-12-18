@@ -5,20 +5,19 @@ from .pays import Pays
 
 class Continent:
     """
-    Représente la capitale d'un pays.
-    Auteurs : Liya _ Nada
-    Version : 1.0
+    --- US06 Singleton STRICT : Seul "Zootopia" peut exister ---
     """
-    _instances = {}
+    _instance: Optional[Continent] = None
 
-    def __new__(cls, nom, reset=False):
-        if reset or nom not in cls._instances:
-            instance = super().__new__(cls)
-            instance._nom = nom
-            instance._pays = []
-            cls._instances[nom] = instance
-        return cls._instances[nom]
-    
+    def __new__(cls, nom="Zootopia"):
+        # VERROUILLAGE : Si une instance existe déjà, on interdit toute nouvelle création.
+        if cls._instance is not None:
+            # ON CHANGE LE MESSAGE ICI POUR MATCHER TON GHERKIN :
+            raise Exception(f"Erreur : {cls._instance._nom} est l'unique continent ! Impossible de créer {nom}.")
+            
+        # Sinon, on crée la première et unique instance
+        cls._instance = super(Continent, cls).__new__(cls)
+        return cls._instance
     
     # L'initialisation est gérée par __new__ pour le Singleton
     def __init__(self, nom="Europe", reset=False):
@@ -29,7 +28,12 @@ class Continent:
             self._nom = nom
             self._pays = []
     
-    
+    # --- Méthode vitale pour les tests (remplace ton reset=True) ---
+    @classmethod
+    def reset_instance(cls):
+        """Permet de détruire le monde pour repartir à zéro entre les tests"""
+        cls._instance = None
+
     def get_nom(self):
         return self._nom
 
