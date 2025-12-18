@@ -5,14 +5,15 @@ from src.pays import Pays
 # Dictionnaire pour stocker nos continents (comme pour l'US-03)
 world_map = {}
 
-@given('le continent "{nom_cont}" existe avec les pays suivants')
+@given('le continent "{nom_cont}" existe avec les pays suivants:')
 def step_create_continent_with_table(context, nom_cont):
-    c = Continent(nom_cont)
+    # On force un continent "propre" pour ce scénario
+    c = Continent(nom_cont, reset=True)
     # On lit le tableau ligne par ligne
     for row in context.table:
         nom_pays = row['nom']
         pop = int(row['population'])
-        # On utilise ta classe Pays existante
+        # On utilise ta classe Pays existante    
         p = Pays(nom_pays, pop)
         c.ajouter_pays(p)
     

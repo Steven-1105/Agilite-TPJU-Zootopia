@@ -9,14 +9,15 @@ class Continent:
     Auteurs : Liya _ Nada
     Version : 1.0
     """
-    _instance = None
+    _instances = {}
 
-    def __new__(cls, nom="Zootopia"):
-        if cls._instance is None:
-            cls._instance = super(Continent, cls).__new__(cls)
-            cls._instance._nom = nom
-            cls._instance._pays = []
-        return cls._instance
+    def __new__(cls, nom, reset=False):
+        if reset or nom not in cls._instances:
+            instance = super().__new__(cls)
+            instance._nom = nom
+            instance._pays = []
+            cls._instances[nom] = instance
+        return cls._instances[nom]
     
     """
     L'initialisation est gérée par __new__ pour le Singleton
