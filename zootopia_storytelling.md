@@ -28,7 +28,7 @@ Ces deux mondes devaient communiquer sans que l'un ne modifie profondément le c
 ### **Niveau 1 : Le Cœur Unique - Le Singleton `Continent`**
 Pour garantir l'unicité et la cohérence de la métropole, nous avons instauré **Zootopia comme un Singleton**. Peu importe qui ou quoi l'interroge, il n'existe qu'une seule et unique instance de la ville. C'est la pierre angulaire administrative, le "Continent" qui chapeaute tout.
 
-*Narration : « Zootopia est une. Son administration centrale est unique et incontestable, garantissant l'ordre à l'échelle de la métropole. »*
+* Zootopia est une. Son administration centrale est unique et incontestable, garantissant l'ordre à l'échelle de la métropole. *
 
 ### **Niveau 2 : Les Districts - La classe `Pays`**
 La ville se divise en **districts climatiques emblématiques** (Tundratown, Sahara Square, Rainforest District...). Chacun est une instance de `Pays`. Dès sa création, un district s'enregistre **automatiquement** auprès de la mairie centrale (`Continent`), s'inscrivant dans la cartographie officielle de Zootopia.
@@ -39,10 +39,11 @@ C'est ici que la fusion devient élégante. Pour relier un `Habitat` biologique 
 *   **Rôle :** Cette classe agit comme un **"permis de zonage"**.
 *   **Fonction :** Elle "enveloppe" un `Habitat` (ex: une Banquise) et lui **assigne officiellement un district** (ex: Tundratown). Elle traduit l'espace naturel en zone administrative reconnue.
 
-*Narration : « Dans la nature, un habitat est libre. À Zootopia, il doit être zoné. Notre adaptateur officialise le biotope, le rattachant juridiquement et logiquement à un district. »*
+*Dans la nature, un habitat est libre. À Zootopia, il doit être zoné. Notre adaptateur officialise le biotope, le rattachant juridiquement et logiquement à un district. *
 
 ### **Niveau 4 : Les Biotopes Concrets - La classe `Habitat`**
 À l'intérieur des districts zonés se trouvent les **habitats réels**, gérés par la classe d'origine `Habitat`. Elle définit le type de milieu (froid, aride...) et garde la **liste des résidents actuels**.
+![Diagramme Zootopia](/image/image3.jpg)
 
 ### **Niveau 5 : Les Citoyens - La classe `Animal`**
 Au bout de la chaîne, les **citoyens** (Judy Hopps, Nick Wilde...). Ils possèdent une **énergie vitale** et des **besoins spécifiques**.
@@ -69,6 +70,6 @@ Grâce à cette architecture en couches, des mécanismes sociaux complexes devie
 ## 6. Conclusion : La Leçon de Zootopia
 Ce projet démontre que des systèmes complexes et initialement indépendants peuvent **co-évoluer harmonieusement** grâce à une **architecture pensée et des patterns design appropriés**. Comme dans la ville de Zootopia, où prédateurs et proies apprennent à vivre ensemble, nos composants "Géographie" et "Biologie" ont trouvé un langage commun grâce à un adaptateur bien conçu.
 
-> *« En code comme en société, l'intégration ne signifie pas l'assimilation, mais la création d'interfaces intelligentes qui préservent l'identité de chacun. »*
+> * En code comme en société, l'intégration ne signifie pas l'assimilation, mais la création d'interfaces intelligentes qui préservent l'identité de chacun. *
 
 **En résumé : Zootopia est plus qu'une ville ; c'est une simulation architecturale où chaque couche de code a sa place et son rôle, contribuant à faire vivre une société virtuelle cohérente.**
