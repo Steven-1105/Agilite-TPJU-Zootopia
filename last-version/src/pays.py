@@ -10,21 +10,23 @@ class Pays:
     Auteurs : Liya _ Nada
     Version : 1.0
     """
-    def __init__(self, nom, nb_habitant=66142961, continent= None):
-        # [cite_start]Initialisation des attributs nom et habitants [cite: 13]
+    def __init__(self, nom, nb_habitant=66142961, superficie=1, continent= None):
+        # Initialisation des attributs nom et habitants 
         self._nom : str = nom
-
-        # BOUCLIER ANTI-ZOMBIES
+        # BOUCLIER ANTI-ZOMBIES (US01)
         if nb_habitant < 0:
             raise ValueError("Erreur : La population ne peut pas être négative !")
         self._nb_habitant : int = nb_habitant
-        
+        # AJOUT POUR MICHEL (US02)
+        if superficie <= 0:
+            raise ValueError("Erreur : La superficie doit être positive !")
+        self._superficie : int = superficie
         self._continent = continent # On le stocke d'abord
         if continent is not None:
-            # On appelle la méthode SUR l'objet continent
+            # On appelle la méthode sur l'objet continent
             continent.ajouter_pays(self)
 
-    # [cite_start]Getters et Setters [cite: 14]
+    # Getters et Setters [cite: 14]
     def get_nom(self):
         return self._nom
 
@@ -42,6 +44,12 @@ class Pays:
 
     def set_capitale(self, c):
         self._capitale = c
+    
+    # --- NOUVELLE MÉTHODE POUR MICHEL (US02) ---
+    def calculer_densite(self):
+        """Calcule la densité et arrondit à 2 chiffres après la virgule"""
+        densite = self._nb_habitant / self._superficie
+        return round(densite, 2)
 
     def __str__(self):
         """Équivalent du toString() en Java"""

@@ -9,7 +9,6 @@ from src.continent import Continent
 def test_us01_create_pays_negative_population_raises_error():
     with pytest.raises(ValueError) as excinfo:
         Pays("Zombieland", -500)
-    # CORRECTION : On vérifie le message exact défini dans Pays.py
     assert "Erreur : La population ne peut pas être négative !" in str(excinfo.value)
 
 def test_us01_update_population_negative_raises_error():

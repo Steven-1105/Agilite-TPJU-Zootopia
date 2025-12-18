@@ -7,7 +7,7 @@ Afin de garantir une base saine (pas de zombies, pas de clones)
 # Scénario 1 : Le Syndrome du Zombie
 Scenario Outline: Rejet des populations négatives
     Given que je veux créer un nouveau pays
-    When Kevin saisit un pays de <population nétigatives>
+    When Kevin saisit un pays de <population>
     Then le système refuse la création
     And il lève une erreur contenant "<message>"
 
