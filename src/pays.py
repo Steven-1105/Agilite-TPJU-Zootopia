@@ -15,6 +15,7 @@ class Pays:
         self._nb_habitant : int = nb_habitant
         # [cite_start]Création automatique d'une instance de Capitale au démarrage [cite: 13]
         self._continent : Continent = Continent()
+        self._continent.add_country(self)
 
     # [cite_start]Getters et Setters [cite: 14]
     def get_nom(self):
@@ -29,9 +30,6 @@ class Pays:
     def set_nb_habitant(self, hab):
         if(hab > 0):
             self._nb_habitant = hab
-
-    def set_capitale(self, c):
-        self._capitale = c
 
     def __str__(self):
         """Équivalent du toString() en Java"""
