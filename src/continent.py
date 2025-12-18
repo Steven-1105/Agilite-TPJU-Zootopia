@@ -18,13 +18,13 @@ class Continent:
             cls._instance._pays = []
         return cls._instance
     
-    """
-    L'initialisation est gérée par __new__ pour le Singleton
+    
+    # L'initialisation est gérée par __new__ pour le Singleton
     def __init__(self, nom="Europe"):
         # [cite_start]Initialisation de l'attribut nom avec une valeur par défaut [cite: 13]
         self._nom : str = nom
         self._pays : List["Pays"] = []
-    """
+    
     
     def get_nom(self):
         return self._nom
