@@ -14,3 +14,4 @@ Scenario Outline: Vérification automatique du calcul
     | pays    | population | superficie | resultat |
     | Monaco  | 39000      | 2          | 19500    |
     | Russie  | 144000000  | 17000000   | 8.47     |
+    

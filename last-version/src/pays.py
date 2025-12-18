@@ -13,11 +13,11 @@ class Pays:
     def __init__(self, nom, nb_habitant=66142961, superficie=1, continent= None):
         # Initialisation des attributs nom et habitants 
         self._nom : str = nom
-        # BOUCLIER ANTI-ZOMBIES (US01)
+        # AJOUT US-01 BOUCLIER ANTI-ZOMBIES 
         if nb_habitant < 0:
             raise ValueError("Erreur : La population ne peut pas être négative !")
         self._nb_habitant : int = nb_habitant
-        # AJOUT POUR MICHEL (US02)
+        # AJOUT US-02 POUR SUPERFICIE
         if superficie <= 0:
             raise ValueError("Erreur : La superficie doit être positive !")
         self._superficie : int = superficie
@@ -45,7 +45,7 @@ class Pays:
     def set_capitale(self, c):
         self._capitale = c
     
-    # --- NOUVELLE MÉTHODE POUR MICHEL (US02) ---
+    # --- AJOUT US-02 : NOUVELLE MÉTHODE POUR SUPERFICIE ---
     def calculer_densite(self):
         """Calcule la densité et arrondit à 2 chiffres après la virgule"""
         densite = self._nb_habitant / self._superficie

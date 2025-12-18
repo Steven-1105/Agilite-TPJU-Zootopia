@@ -27,3 +27,15 @@ class Continent:
                 raise ValueError(f"Doublon détecté : {pays.get_nom()} existe déjà !")
         # Si pas de doublon trouvé, on ajoute
         self._pays.append(pays)
+
+    # --- AJOUT US-03 : L'AGRÉGATION ---
+    def population_totale(self):
+        """
+        Interroge chaque pays et fait la somme.
+        C'est la méthode "Calculatrice de Michel".
+        """
+        total = 0
+        for p in self._pays:
+            # On demande gentiment à chaque pays sa population
+            total += p.get_nb_habitant()
+        return total
