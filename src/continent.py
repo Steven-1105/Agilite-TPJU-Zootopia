@@ -21,10 +21,13 @@ class Continent:
     
     
     # L'initialisation est gérée par __new__ pour le Singleton
-    def __init__(self, nom="Europe"):
+    def __init__(self, nom="Europe", reset=False):
         # [cite_start]Initialisation de l'attribut nom avec une valeur par défaut [cite: 13]
         self._nom : str = nom
         self._pays : List["Pays"] = []
+        if reset or not hasattr(self, "_pays"):
+            self._nom = nom
+            self._pays = []
     
     
     def get_nom(self):
