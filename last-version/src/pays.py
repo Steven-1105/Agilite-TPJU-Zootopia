@@ -1,7 +1,8 @@
 from __future__ import annotations
 from typing import List, TYPE_CHECKING
 
-from .continent import Continent
+if TYPE_CHECKING:
+    from .continent import Continent
 
 class Pays:
     """
@@ -12,10 +13,10 @@ class Pays:
     def __init__(self, nom, nb_habitant=66142961, continent= None):
         # [cite_start]Initialisation des attributs nom et habitants [cite: 13]
         self._nom : str = nom
-        
+
         # BOUCLIER ANTI-ZOMBIES
         if nb_habitant < 0:
-            raise ValueError("Population incorrecte : Pas de population négative !")
+            raise ValueError("Erreur : La population ne peut pas être négative !")
         self._nb_habitant : int = nb_habitant
         
         self._continent = continent # On le stocke d'abord
@@ -34,8 +35,10 @@ class Pays:
         return self._nb_habitant
 
     def set_nb_habitant(self, hab):
-        if(hab > 0):
-            self._nb_habitant = hab
+        # Le setter doit aussi bloquer les zombies !
+        if hab < 0:
+            raise ValueError("Erreur : La population ne peut pas être négative !")
+        self._nb_habitant = hab
 
     def set_capitale(self, c):
         self._capitale = c

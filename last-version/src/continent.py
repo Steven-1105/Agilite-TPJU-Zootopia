@@ -20,8 +20,10 @@ class Continent:
     def set_nom(self, nom):
         self._nom = nom
 
-    def ajouter_pays(self, pays):
-        if pays in self._pays:
-            raise ValueError(f"Doublon détecté : {pays.get_nom()} existe déjà !")
-        if pays not in self._pays:
-            self._pays.append(pays)
+    def ajouter_pays(self, pays: "Pays"):
+        # On vérifie les noms pour bloquer les clones
+        for p in self._pays:
+            if p.get_nom() == pays.get_nom():
+                raise ValueError(f"Doublon détecté : {pays.get_nom()} existe déjà !")
+        # Si pas de doublon trouvé, on ajoute
+        self._pays.append(pays)
