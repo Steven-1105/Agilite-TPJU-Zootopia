@@ -1,6 +1,6 @@
 # Zootopia : Une Métropole où la Biologie rencontre la Géographie
 
-![Diagramme Zootopia](./images/image1.jpeg)
+![Diagramme Zootopia](/image/image1.jpeg)
 *Une fusion architecturale de deux projets en une ville vivante et cohérente.*
 
 ---
@@ -46,7 +46,7 @@ C'est ici que la fusion devient élégante. Pour relier un `Habitat` biologique 
 
 ### **Niveau 5 : Les Citoyens - La classe `Animal`**
 Au bout de la chaîne, les **citoyens** (Judy Hopps, Nick Wilde...). Ils possèdent une **énergie vitale** et des **besoins spécifiques**.
-![Diagramme Zootopia](./images/image2.png)
+![Diagramme Zootopia](/image/image2.png)
 ---
 
 ## 4. Le Tournant : La Vie en Société Démystifiée
