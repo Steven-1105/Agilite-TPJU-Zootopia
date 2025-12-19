@@ -70,6 +70,7 @@ Grâce à cette architecture en couches, des mécanismes sociaux complexes devie
 [Voir les User Stories](USER_STORIES.md): Ce document détaille les scénarios d'utilisation du système (US), les critères d'acceptation et la correspondance avec les tests fonctionnels Gherkin.
 
 * **Gestion de la fusion**
+  
 [Test unitaire - US05](tests/test_us05_fusion_bio_geo.py) : Ce script est le garant de la "Barre Verte". Il vérifie la chaîne de liaison complète : Animal ➔ HabitatDistrict ➔ Pays ➔ Continent.
 
 *Points clés vérifiés* :
