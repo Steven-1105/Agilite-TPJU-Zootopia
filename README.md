@@ -47,3 +47,7 @@ Le projet est validé par :
 - 60 steps exécutés
 - Aucun échec
 
+![Résultat des tests Behave](./image/behave.jpg)
+
+
+![Résultat des tests Pytest](./image/pytest.jpg)
