@@ -7,7 +7,7 @@ class Continent:
     """
     Singleton représentant la métropole unique Zootopia.
     """
-    _instance: Optional[Continent] = None
+    _instance: Optional[Continent] = None # type: ignore
 
     def __new__(cls, nom="Zootopia"):
         # Mécanique du Singleton : on ne crée l'objet qu'une seule fois
