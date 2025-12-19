@@ -67,6 +67,7 @@ Grâce à cette architecture en couches, des mécanismes sociaux complexes devie
 
 **Transformation technique :** L'utilisation du **pattern Adaptateur** a été la révélation. Il a permis une **fusion propre, évolutive et respectueuse du code existant**, évitant un réécriture massive et des couplages indésirables.
 
+![user_stories](/main/USER_STORIES.md)
 ---
 
 ## 6. Conclusion : La Leçon de Zootopia
