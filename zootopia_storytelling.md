@@ -25,6 +25,8 @@ Ces deux mondes devaient communiquer sans que l'un ne modifie profondément le c
 
 ## 3. Le Voyage : L'Architecture en Couches de Zootopia
 
+![Diagramme Zootopia](/image/image4.jpg)
+diagramme de classe illustrant les 2 design patterns
 ### **Niveau 1 : Le Cœur Unique - Le Singleton `Continent`**
 Pour garantir l'unicité et la cohérence de la métropole, nous avons instauré **Zootopia comme un Singleton**. Peu importe qui ou quoi l'interroge, il n'existe qu'une seule et unique instance de la ville. C'est la pierre angulaire administrative, le "Continent" qui chapeaute tout.
 
