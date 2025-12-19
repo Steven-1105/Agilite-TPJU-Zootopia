@@ -67,7 +67,7 @@ Grâce à cette architecture en couches, des mécanismes sociaux complexes devie
 
 **Transformation technique :** L'utilisation du **pattern Adaptateur** a été la révélation. Il a permis une **fusion propre, évolutive et respectueuse du code existant**, évitant un réécriture massive et des couplages indésirables.
 
-[Voir les User Stories](USER_STORIES.md): Ce document détaille les scénarios d'utilisation du système (US), les critères d'acceptation et la correspondance avec les tests fonctionnels Gherkin.
+[User Stories](USER_STORIES.md): Ce document détaille les scénarios d'utilisation du système (US), les critères d'acceptation et la correspondance avec les tests fonctionnels Gherkin.
 
 * **Gestion de la fusion**
 
