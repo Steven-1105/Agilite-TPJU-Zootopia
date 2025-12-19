@@ -5,22 +5,18 @@ from .pays import Pays
 
 class Continent:
     """
-    --- US06 Singleton STRICT : Seul "Zootopia" peut exister ---
+    Singleton représentant la métropole unique Zootopia.
     """
     _instance: Optional[Continent] = None
 
     def __new__(cls, nom="Zootopia"):
-        # VERROUILLAGE : Si une instance existe déjà, on interdit toute nouvelle création.
-        if cls._instance is not None:
-            # ON CHANGE LE MESSAGE ICI POUR MATCHER TON GHERKIN :
-            raise Exception(f"Erreur : {cls._instance._nom} est l'unique continent ! Impossible de créer {nom}.")
-            
-        # Sinon, on crée la première et unique instance
-        cls._instance = super(Continent, cls).__new__(cls)
+        # Mécanique du Singleton : on ne crée l'objet qu'une seule fois
+        if cls._instance is None:
+            cls._instance = super(Continent, cls).__new__(cls)
         return cls._instance
     
     # L'initialisation est gérée par __new__ pour le Singleton
-    def __init__(self, nom="Europe", reset=False):
+    def __init__(self, nom="Zootopia", reset=False):
         # [cite_start]Initialisation de l'attribut nom avec une valeur par défaut [cite: 13]
         self._nom : str = nom
         self._pays : List["Pays"] = []
@@ -59,6 +55,9 @@ class Continent:
             # On demande gentiment à chaque pays sa population
             total += p.get_nb_habitant()
         return total
+    
+    def get_pays(self) -> List["Pays"]:
+        return self._pays
     
     # --- AJOUT US-04 : LE FILTRAGE ---
     def get_pays_population_max(self, seuil_population: int):

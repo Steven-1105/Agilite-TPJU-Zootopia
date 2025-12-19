@@ -1,10 +1,11 @@
-Feature: US_06 Unicité de la métropole Zootopia
+Feature: US_06 Création de la Métropole Unique (Singleton)
 En tant que Maire Lionheart
-Je veux qu'il n'existe qu'un seul continent appelé "Zootopia"
-Afin de garantir que personne ne crée de monde parallèle
+Je veux garantir l'unicité de la ville
+Afin d'éviter le chaos administratif
 
-Scenario: Tentative de création d'un second continent
-    Given le continent "Zootopia" est déjà fondé
-    When je tente de créer un autre continent "Atlantis"
-    Then le système bloque la création
-    And une erreur fatale est levée contenant "Zootopia est l'unique continent"
+Scenario: Tentative de création multiple
+    Given le continent "Zootopia" est initialisé
+    When je tente de créer un autre continent appelé "Atlantis"
+    Then les deux références pointent vers le MÊME objet mémoire
+    And le nom du deuxième continent est en réalité "Zootopia"
+    And la liste des districts est partagée entre les deux

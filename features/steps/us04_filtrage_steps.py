@@ -8,7 +8,7 @@ world_map = {}
 @given('le continent "{nom_cont}" existe avec les pays suivants:')
 def step_create_continent_with_table(context, nom_cont):
     # On force un continent "propre" pour ce scénario
-    c = Continent(nom_cont, reset=True)
+    c = Continent(nom_cont)
     # On lit le tableau ligne par ligne
     for row in context.table:
         nom_pays = row['nom']

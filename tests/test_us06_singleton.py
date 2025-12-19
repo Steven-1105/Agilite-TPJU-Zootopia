@@ -1,50 +1,41 @@
 import pytest
 from src.continent import Continent
 
-def test_us06_creation_unique_zootopia():
+def test_us06_singleton_identity():
     """
-    Vérifie que la première création fonctionne.
+    Vérifie que deux appels renvoient bien la MÊME instance mémoire.
+    C'est la définition pure du Singleton.
     """
-    # 1. On nettoie tout avant de commencer (Vital !)
-    Continent.reset_instance()
+    # Reset manuel pour être sûr
+    Continent._instance = None
     
-    # 2. La première fois, ça doit marcher
     c1 = Continent("Zootopia")
-    assert c1.get_nom() == "Zootopia"
+    c2 = Continent("Atlantis") 
+    
+    # TEST ULTIME : Est-ce que c1 et c2 sont le même objet ?
+    # Si oui, le Singleton fonctionne.
+    assert c1 is c2
+    assert id(c1) == id(c2)
 
-def test_us06_blocage_double_creation():
+def test_us06_soft_reset_behavior():
     """
-    Vérifie que le système LÈVE UNE ERREUR si on crée un 2ème continent.
+    Vérifie le comportement 'Soft Singleton' que tu as choisi :
+    L'objet reste le même, mais les données sont remises à zéro
+    quand on rappelle Continent().
     """
-    Continent.reset_instance()
-    
-    # 1. On crée le premier (Zootopia)
+    Continent._instance = None
     c1 = Continent("Zootopia")
     
-    # 2. On essaie de créer le deuxième (Atlantis)
-    # Le test réussit SEULEMENT si une Exception est levée
-    with pytest.raises(Exception) as info_erreur:
-        c2 = Continent("Atlantis")
+    # On modifie c1 pour "salir" l'objet
+    c1._nom = "Modified"
     
-    # 3. On vérifie que le message est bien celui qu'on a défini
-    # (Adapté à ta dernière phrase Gherkin)
-    message_recu = str(info_erreur.value)
-    assert "Zootopia est l'unique continent" in message_recu
-
-def test_us06_reset_fonctionne():
-    """
-    Vérifie que reset_instance() permet bien de recommencer.
-    (Important pour tes autres tests)
-    """
-    Continent.reset_instance()
-    c1 = Continent("Zootopia")
+    # On rappelle le constructeur (ce que font tes tests Behave)
+    c2 = Continent("Zootopia")
     
-    # On détruit le monde
-    Continent.reset_instance()
+    # 1. C'est toujours le même objet (Singleton)
+    assert c1 is c2
     
-    # On doit pouvoir recréer un continent sans erreur maintenant
-    try:
-        c2 = Continent("NouveauMonde")
-        assert c2.get_nom() == "NouveauMonde"
-    except Exception:
-        pytest.fail("Le reset_instance() n'a pas fonctionné, le Singleton est resté bloqué.")
+    # 2. MAIS le nom est redevenu "Zootopia" car __init__ a été rappelé
+    # C'est ce comportement qui permet à tes tests Behave de fonctionner sans erreurs !
+    assert c2.get_nom() == "Zootopia"
+    assert c1.get_nom() == "Zootopia" # c1 a aussi changé car c'est le même objet
