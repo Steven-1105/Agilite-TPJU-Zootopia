@@ -73,9 +73,7 @@ Grâce à cette architecture en couches, des mécanismes sociaux complexes devie
 
 ---
   
-[Test unitaire – US05](tests/test_us05_fusion_bio_geo.py) :  
-Ce script garantit la **non-régression** lors de la fusion des domaines
-biologique et géographique.  
+[Test unitaire – US05](tests/test_us05_fusion_bio_geo.py) :  Ce script garantit la **non-régression** lors de la fusion des domaines biologique et géographique.  
 Il vérifie la chaîne de liaison complète :
 
 **Animal ➔ HabitatDistrict ➔ Pays ➔ Continent**
@@ -93,9 +91,7 @@ Il vérifie la chaîne de liaison complète :
 
 ---
 
-[Test fonctionnel – US05](features/us05_fusion_bio_geo.feature) :  
-Ce scénario Gherkin valide le comportement métier de la fusion,
-du point de vue utilisateur.
+[Test fonctionnel – US05](features/us05_fusion_bio_geo.feature) : Ce scénario Gherkin valide le comportement métier de la fusion, du point de vue utilisateur.
 
 Il confirme que la chaîne fonctionnelle suivante est opérationnelle :
 
@@ -106,9 +102,7 @@ conformément aux principes de l’agilité et de la non-régression.
 
 ---
 
-[Test unitaire – US06](tests/test_us06_singleton.py) :  
-Ce script valide l’implémentation du **Design Pattern Singleton**
-pour la classe `Continent`.
+[Test unitaire – US06](tests/test_us06_singleton.py) : Ce script valide l’implémentation du **Design Pattern Singleton** pour la classe `Continent`.
 
 ### Points clés vérifiés :
 - **Identité mémoire :**  
@@ -123,9 +117,7 @@ pour la classe `Continent`.
 
 ---
 
-[Test fonctionnel – US06](features/us06_metropole_unique.feature) :  
-Ce scénario BDD valide le **comportement métier** associé au Singleton,
-du point de vue utilisateur.
+[Test fonctionnel – US06](features/us06_metropole_unique.feature) : Ce scénario BDD valide le **comportement métier** associé au Singleton, du point de vue utilisateur.
 
 Il démontre que :
 - plusieurs tentatives de création de continent conduisent à une
