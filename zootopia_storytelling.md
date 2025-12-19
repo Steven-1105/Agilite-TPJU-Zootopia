@@ -29,7 +29,7 @@ Ces deux mondes devaient communiquer sans que l'un ne modifie profondément le c
 diagramme de classe illustrant les 2 design patterns
 ### **Niveau 1 : Le Cœur Unique - Le Singleton `Continent`**
 Pour garantir l'unicité et la cohérence de la métropole, nous avons instauré **Zootopia comme un Singleton**. Peu importe qui ou quoi l'interroge, il n'existe qu'une seule et unique instance de la ville. C'est la pierre angulaire administrative, le "Continent" qui chapeaute tout.
-
+[Design Pattern Singleton](./src/continent.py) 
 * Zootopia est une. Son administration centrale est unique et incontestable, garantissant l'ordre à l'échelle de la métropole. 
 
 ### **Niveau 2 : Les Districts - La classe `Pays`**
@@ -37,7 +37,7 @@ La ville se divise en **districts climatiques emblématiques** (Tundratown, Saha
 
 ### **Niveau 3 : Le Zonage Urbain - L'Adaptateur `HabitatDistrict` (La Clé de Voûte)**
 C'est ici que la fusion devient élégante. Pour relier un `Habitat` biologique à un `Pays` géographique **sans modifier leurs codes d'origine**, nous avons créé un **Design Pattern Adaptateur** : `HabitatDistrict`.
-
+**[Design Pattern Adaptateur](./src/habitat_district.py)** : Classe pivot permettant de lier un `Habitat` à un `Pays` (District) sans modifier le code source original.
 *   **Rôle :** Cette classe agit comme un **"permis de zonage"**.
 *   **Fonction :** Elle "enveloppe" un `Habitat` (ex: une Banquise) et lui **assigne officiellement un district** (ex: Tundratown). Elle traduit l'espace naturel en zone administrative reconnue.
 
@@ -68,6 +68,12 @@ Grâce à cette architecture en couches, des mécanismes sociaux complexes devie
 **Transformation technique :** L'utilisation du **pattern Adaptateur** a été la révélation. Il a permis une **fusion propre, évolutive et respectueuse du code existant**, évitant un réécriture massive et des couplages indésirables.
 
 [voir les user_stories](USER_STORIES.md)
+[Pour consulter les tests unitaires - US05 ](tests/test_us05_fusion_bio_geo.py)
+[Voir les tests unitaires - US06 ](tests/test_us06_singleton.py)
+[Tests Fonctionnels (US_05)](features/us05_fusion_bio_geo.feature) : Scénarios Gherkin validant la chaîne complète : Citoyen -> Habitat -> District -> Ville.
+[Tests Fonctionnels (US_06)](features/us06_metropole_unique.feature): 
+
+
 ---
 
 ## 6. Conclusion : La Leçon de Zootopia
