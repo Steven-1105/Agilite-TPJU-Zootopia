@@ -69,19 +69,24 @@ Grâce à cette architecture en couches, des mécanismes sociaux complexes devie
 
 [Voir les User Stories](USER_STORIES.md): Ce document détaille les scénarios d'utilisation du système (US), les critères d'acceptation et la correspondance avec les tests fonctionnels Gherkin.
 
-[Consulter les tests unitaires - US05](tests/test_us05_fusion_bio_geo.py) : Ce script est le garant de la "Barre Verte". Il vérifie la chaîne de liaison complète : Animal ➔ HabitatDistrict ➔ Pays ➔ Continent.
+* **Gestion de la fusion**
+[Test unitaire - US05](tests/test_us05_fusion_bio_geo.py) : Ce script est le garant de la "Barre Verte". Il vérifie la chaîne de liaison complète : Animal ➔ HabitatDistrict ➔ Pays ➔ Continent.
 
-**Points clés vérifiés** :
+*Points clés vérifiés* :
 
 * **Compatibilité descendante :** L'animal utilise sa méthode originale move_to sans modification du code source.
 
 * **Validation de l'Adaptateur :** L'habitat forestier est correctement "adapté" pour appartenir au district "France".
 
 * **Intégrité du Storytelling :** On confirme qu'un loup dans une forêt sait désormais qu'il se trouve géographiquement en France, au sein de Zootopia.
+  
+[Test Fonctionnel (US_05)](features/us05_fusion_bio_geo.feature) : Scénarios Gherkin validant la chaîne complète : Citoyen -> Habitat -> District -> Ville.
+
+* **Gestion de la ville Zootopia**
 
 [Consulter les tests unitaires - US06](tests/test_us06_singleton.py) : Ce script valide l'implémentation du Design Pattern Singleton pour la classe Continent.
 
-**Points clés vérifiés :**
+*Points clés vérifiés :*
 
 * **Identité Mémoire :** Garantit que c1 is c2, prouvant qu'il n'existe qu'une seule instance physique de Zootopia en mémoire.
 
@@ -90,9 +95,7 @@ Grâce à cette architecture en couches, des mécanismes sociaux complexes devie
 * **Soft Reset :** Valide que l'état interne peut être réinitialisé sans perdre l'identité de l'objet, ce qui assure la fiabilité des tests fonctionnels successifs.
 
 
-[Tests Fonctionnels (US_05)](features/us05_fusion_bio_geo.feature) : Scénarios Gherkin validant la chaîne complète : Citoyen -> Habitat -> District -> Ville.
-
-[Tests Fonctionnels (US_06)](features/us06_metropole_unique.feature)
+[Test Fonctionnel (US_06)](features/us06_metropole_unique.feature)
 
 
 ---
