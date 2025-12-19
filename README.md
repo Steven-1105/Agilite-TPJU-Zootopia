@@ -1,17 +1,17 @@
 # Projet Zootopia – Agilité & BDD
 
 ## Contexte
-Le projet Zootopia vise à modéliser un écosystème mêlant un domaine biologique (Animal / Habitat) et un domaine géographique (Pays / Continent), en respectant les principes de l’agilité, de la non-régression et des tests automatisés.
+Le projet Zootopia vise à modéliser un écosystème mêlant un domaine biologique **(Animal / Habitat)** et un domaine géographique **(Pays / Continent)**, en respectant les principes de l’agilité, de la non-régression et des tests automatisés.
 
 ![Diagramme Zootopia](/image/image1.jpeg)
 
 ---
 
 ## Objectifs
-- Implémenter des user stories claires et testables
-- Valider les comportements métier via des tests BDD (Behave)
-- Garantir la robustesse du code via des tests unitaires (Pytest)
-- Fusionner deux domaines indépendants sans régression
+- Implémenter des **user stories** claires et testables
+- Valider les comportements métier via des **tests BDD (Behave)**
+- Garantir la robustesse du code via des **tests unitaires (Pytest)**
+- Fusionner deux domaines indépendants **sans régression**
 
 ---
 
@@ -24,7 +24,7 @@ Le projet Zootopia vise à modéliser un écosystème mêlant un domaine biologi
 - **US_05** – Fusion Bio + Géo (Adapter)
 - **US_06** – Métropole unique (Singleton)
 
-(Le détail des user stories et des critères d’acceptance est disponible dans [User Stories](USER_STORIES.md).)
+(Le détail des user stories (**US_05 & US_06**) et des **critères d’acceptance** est disponible dans [User Stories](USER_STORIES.md).)
 
 ---
 
