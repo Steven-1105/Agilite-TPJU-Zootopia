@@ -68,9 +68,13 @@ Grâce à cette architecture en couches, des mécanismes sociaux complexes devie
 **Transformation technique :** L'utilisation du **pattern Adaptateur** a été la révélation. Il a permis une **fusion propre, évolutive et respectueuse du code existant**, évitant un réécriture massive et des couplages indésirables.
 
 [voir les user_stories](USER_STORIES.md)
+
 [Pour consulter les tests unitaires - US05 ](tests/test_us05_fusion_bio_geo.py)
+
 [Voir les tests unitaires - US06 ](tests/test_us06_singleton.py)
+
 [Tests Fonctionnels (US_05)](features/us05_fusion_bio_geo.feature) : Scénarios Gherkin validant la chaîne complète : Citoyen -> Habitat -> District -> Ville.
+
 [Tests Fonctionnels (US_06)](features/us06_metropole_unique.feature): 
 
 
