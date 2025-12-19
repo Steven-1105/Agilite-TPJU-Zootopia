@@ -75,7 +75,7 @@ Grâce à cette architecture en couches, des mécanismes sociaux complexes devie
 
 [Tests Fonctionnels (US_05)](features/us05_fusion_bio_geo.feature) : Scénarios Gherkin validant la chaîne complète : Citoyen -> Habitat -> District -> Ville.
 
-[Tests Fonctionnels (US_06)](features/us06_metropole_unique.feature): 
+[Tests Fonctionnels (US_06)](features/us06_metropole_unique.feature)
 
 
 ---
