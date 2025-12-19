@@ -70,35 +70,72 @@ Grâce à cette architecture en couches, des mécanismes sociaux complexes devie
 [Voir les User Stories](USER_STORIES.md): Ce document détaille les scénarios d'utilisation du système (US), les critères d'acceptation et la correspondance avec les tests fonctionnels Gherkin.
 
 * **Gestion de la fusion**
-  
-[Test unitaire - US05](tests/test_us05_fusion_bio_geo.py) : Ce script est le garant de la "Barre Verte". Il vérifie la chaîne de liaison complète : Animal ➔ HabitatDistrict ➔ Pays ➔ Continent.
-
-*Points clés vérifiés* :
-
-* **Compatibilité descendante :** L'animal utilise sa méthode originale move_to sans modification du code source.
-
-* **Validation de l'Adaptateur :** L'habitat forestier est correctement "adapté" pour appartenir au district "France".
-
-* **Intégrité du Storytelling :** On confirme qu'un loup dans une forêt sait désormais qu'il se trouve géographiquement en France, au sein de Zootopia.
-  
-[Test Fonctionnel (US_05)](features/us05_fusion_bio_geo.feature) : Scénarios Gherkin validant la chaîne complète : Citoyen -> Habitat -> District -> Ville.
-
-* **Gestion de la ville Zootopia**
-
-[Consulter les tests unitaires - US06](tests/test_us06_singleton.py) : Ce script valide l'implémentation du Design Pattern Singleton pour la classe Continent.
-
-*Points clés vérifiés :*
-
-* **Identité Mémoire :** Garantit que c1 is c2, prouvant qu'il n'existe qu'une seule instance physique de Zootopia en mémoire.
-
-* **Persistance du Singleton :** Vérifie que même en tentant de créer un nouveau continent, le système renvoie l'objet existant.
-
-* **Soft Reset :** Valide que l'état interne peut être réinitialisé sans perdre l'identité de l'objet, ce qui assure la fiabilité des tests fonctionnels successifs.
-
-
-[Test Fonctionnel (US_06)](features/us06_metropole_unique.feature)
 
 ---
+  
+[Test unitaire – US05](tests/test_us05_fusion_bio_geo.py) :  
+Ce script garantit la **non-régression** lors de la fusion des domaines
+biologique et géographique.  
+Il vérifie la chaîne de liaison complète :
+
+**Animal ➔ HabitatDistrict ➔ Pays ➔ Continent**
+
+### Points clés vérifiés :
+- **Compatibilité descendante :**  
+  L’animal utilise sa méthode originale `move_to` sans aucune modification
+  du code source existant.
+- **Validation de l’Adaptateur :**  
+  L’habitat forestier est correctement adapté pour appartenir au district
+  géographique « France ».
+- **Intégrité du storytelling :**  
+  Un loup vivant dans une forêt est désormais capable de se situer
+  géographiquement en France, au sein du continent Zootopia.
+
+---
+
+[Test fonctionnel – US05](features/us05_fusion_bio_geo.feature) :  
+Ce scénario Gherkin valide le comportement métier de la fusion,
+du point de vue utilisateur.
+
+Il confirme que la chaîne fonctionnelle suivante est opérationnelle :
+
+**Citoyen ➔ Habitat ➔ District ➔ Ville**
+
+La fusion est ainsi validée sans altérer les comportements existants,
+conformément aux principes de l’agilité et de la non-régression.
+
+---
+
+[Test unitaire – US06](tests/test_us06_singleton.py) :  
+Ce script valide l’implémentation du **Design Pattern Singleton**
+pour la classe `Continent`.
+
+### Points clés vérifiés :
+- **Identité mémoire :**  
+  Vérifie que deux références pointent vers le même objet
+  (`c1 is c2`), garantissant l’unicité de la métropole Zootopia en mémoire.
+- **Persistance du Singleton :**  
+  Confirme que toute tentative de création d’un nouveau continent
+  retourne l’instance existante.
+- **Soft reset contrôlé :**  
+  Valide la possibilité de réinitialiser l’état interne sans perdre
+  l’identité de l’objet, assurant la fiabilité des tests successifs.
+
+---
+
+[Test fonctionnel – US06](features/us06_metropole_unique.feature) :  
+Ce scénario BDD valide le **comportement métier** associé au Singleton,
+du point de vue utilisateur.
+
+Il démontre que :
+- plusieurs tentatives de création de continent conduisent à une
+  **instance unique**,
+- l’identité de la ville reste cohérente,
+- les données internes sont partagées entre toutes les références.
+
+Ainsi, le choix architectural du Singleton est pleinement justifié
+par un besoin fonctionnel explicite et vérifié par des tests BDD.
+
 
 ## 5.1 Validation par les tests automatisés (BDD & Tests unitaires)
 
