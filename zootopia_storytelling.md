@@ -97,8 +97,7 @@ Il confirme que la chaîne fonctionnelle suivante est opérationnelle :
 
 **Citoyen ➔ Habitat ➔ District ➔ Ville**
 
-La fusion est ainsi validée sans altérer les comportements existants,
-conformément aux principes de l’agilité et de la non-régression.
+La fusion est ainsi validée sans altérer les comportements existants, conformément aux principes de l’agilité et de la non-régression.
 
 ---
 
@@ -125,20 +124,16 @@ Il démontre que :
 - l’identité de la ville reste cohérente,
 - les données internes sont partagées entre toutes les références.
 
-Ainsi, le choix architectural du Singleton est pleinement justifié
-par un besoin fonctionnel explicite et vérifié par des tests BDD.
+Ainsi, le choix architectural du Singleton est pleinement justifié par un besoin fonctionnel explicite et vérifié par des tests BDD.
 
 
 ## 5.1 Validation par les tests automatisés (BDD & Tests unitaires)
 
-Afin de garantir la conformité du système aux user stories définies,  
-l’ensemble des fonctionnalités a été validé par des **tests automatisés**,  
-selon deux niveaux complémentaires :
+Afin de garantir la conformité du système aux user stories définies, l’ensemble des fonctionnalités a été validé par des **tests automatisés**, selon deux niveaux complémentaires :
 
 ### ✔ Tests Fonctionnels – BDD (Behave)
 
-Les scénarios Behave permettent de valider les **critères d’acceptance**  
-de chaque user story du point de vue métier.
+Les scénarios Behave permettent de valider les **critères d’acceptance** de chaque user story du point de vue métier.
 
 ![Résultat des tests Behave](./image/behave.jpg)
 
@@ -148,16 +143,13 @@ de chaque user story du point de vue métier.
 - 60 steps exécutés
 - Aucun échec
 
-Ces tests confirment que les user stories **US_001 à US_06** sont respectées  
-et que la fusion entre les domaines biologique et géographique est fonctionnelle  
-sans régression.
+Ces tests confirment que les user stories **US_001 à US_06** sont respectées et que la fusion entre les domaines biologique et géographique est fonctionnelle sans régression.
 
 ---
 
 ### ✔ Tests Unitaires – Pytest
 
-Les tests unitaires Pytest vérifient la **logique interne des classes**  
-et les règles techniques (énergie, calculs, Singleton, adaptateur, etc.).
+Les tests unitaires Pytest vérifient la **logique interne des classes** et les règles techniques (énergie, calculs, Singleton, adaptateur, etc.).
 
 ![Résultat des tests Pytest](./image/pytest.jpg)
 
@@ -165,8 +157,7 @@ et les règles techniques (énergie, calculs, Singleton, adaptateur, etc.).
 - Tous les tests unitaires sont passés avec succès
 - Aucune régression détectée après la fusion des projets
 
-Ces tests garantissent la **robustesse du code**, indépendamment  
-des scénarios fonctionnels.
+Ces tests garantissent la **robustesse du code**, indépendamment des scénarios fonctionnels.
 
 
 ---
