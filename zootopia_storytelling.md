@@ -98,6 +98,47 @@ Grâce à cette architecture en couches, des mécanismes sociaux complexes devie
 
 [Test Fonctionnel (US_06)](features/us06_metropole_unique.feature)
 
+---
+
+## 5.1 Validation par les tests automatisés (BDD & Tests unitaires)
+
+Afin de garantir la conformité du système aux user stories définies,  
+l’ensemble des fonctionnalités a été validé par des **tests automatisés**,  
+selon deux niveaux complémentaires :
+
+### ✔ Tests Fonctionnels – BDD (Behave)
+
+Les scénarios Behave permettent de valider les **critères d’acceptance**  
+de chaque user story du point de vue métier.
+
+![Résultat des tests Behave](./image/behave.jpg)
+
+**Résultat :**
+- 7 features validées
+- 14 scénarios exécutés
+- 60 steps exécutés
+- Aucun échec
+
+Ces tests confirment que les user stories **US_001 à US_06** sont respectées  
+et que la fusion entre les domaines biologique et géographique est fonctionnelle  
+sans régression.
+
+---
+
+### ✔ Tests Unitaires – Pytest
+
+Les tests unitaires Pytest vérifient la **logique interne des classes**  
+et les règles techniques (énergie, calculs, Singleton, adaptateur, etc.).
+
+![Résultat des tests Pytest](./image/pytest.jpg)
+
+**Résultat :**
+- Tous les tests unitaires sont passés avec succès
+- Aucune régression détectée après la fusion des projets
+
+Ces tests garantissent la **robustesse du code**, indépendamment  
+des scénarios fonctionnels.
+
 
 ---
 
